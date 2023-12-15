@@ -2,7 +2,7 @@
 
 ## Commit Messages
 
-This repository uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and [commitizen](https://github.com/commitizen/cz-cli)
+This repository uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and [commitlint](https://commitlint.js.org)
 to standardize the commit messages.
 
 ## Development Flow
