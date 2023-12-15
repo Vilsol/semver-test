@@ -10,8 +10,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "husky": "^8.0.0"
   },
   "release": {
@@ -23,11 +23,6 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/github"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-    }
   },
   "config": {
     "commitizen": {
