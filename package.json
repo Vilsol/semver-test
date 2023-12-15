@@ -1,0 +1,7 @@
+{
+  "name": "semver-test",
+  "version": "1.0.0",
+  "devDependencies": {
+    "semantic-release": "^22.0.12"
+  }
+}
