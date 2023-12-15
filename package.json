@@ -3,5 +3,12 @@
   "version": "1.0.0",
   "devDependencies": {
     "semantic-release": "^22.0.12"
+  },
+  "release": {
+    "branches": ["main"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vilsol/semver-test.git"
   }
 }
