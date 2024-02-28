@@ -6,7 +6,7 @@ on:
 
 jobs:
   pr_approved:
-    if: ${{ github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'main' }}
+    if: ${{ github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'next' }}
     runs-on: ubuntu-latest
     steps:
       - name: Clone git repo
@@ -14,21 +14,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure Git Agent
-        run: |
-          git config --global user.email "bot@restorecommerce.io"
-          git config --global user.name "Bot"
-
       - name: Merge PR
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -x
-          PR_URL="${{ github.event.pull_request.url }}"
-          PR_NUM=${PR_URL##*/}
-          echo "Merging PR #$PR_NUM based on URL: $PR_URL"
-          HEAD_REF=$(gh pr view $PR_NUM --json headRefName -t "{{ .headRefName }}")
-          BASE_BRANCH=$(gh pr view $PR_NUM --json baseRefName -t "{{ .baseRefName }}")
-          git checkout $BASE_BRANCH
-          git merge --ff origin/$HEAD_REF
-          git push -u origin $BASE_BRANCH
+          git checkout main
+          git merge --ff origin/next
+          git push -u origin main
