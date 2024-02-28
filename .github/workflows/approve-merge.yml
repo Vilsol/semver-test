@@ -15,9 +15,11 @@ jobs:
           fetch-depth: 0
 
       - name: Merge PR
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git checkout main
           git merge --ff origin/next
-          git push -u origin main
+
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
