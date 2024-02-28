@@ -34,6 +34,8 @@ jobs:
           echo '\n---\n\n### Approve this PR to release above packages!' >> changes.md
 
       - name: Create PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           export PR_NUMBER=$(gh pr list -B main -H next --json number | jq -r '.[0].number')
           if [[ "$PR_NUMBER" == "null" ]]; then gh pr create -B main -H next -t "chore: release" -F changes.md; fi
