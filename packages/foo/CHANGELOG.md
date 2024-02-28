@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/Vilsol/semver-test/compare/vilsol-semver-test-package@1.0.4...vilsol-semver-test-package@1.1.0) (2024-02-28)
+
+
+### Features
+
+* add code ([583bd08](https://github.com/Vilsol/semver-test/commit/583bd0845dafc7a7d8dd59278a0468d1351491ce))
+
+
+
+
+
 ## 1.0.4 (2024-02-28)
 
 
