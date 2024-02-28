@@ -1,0 +1,29 @@
+{
+    "workspaceLayout": {
+        "libsDir": "packages",
+        "appsDir": "packages"
+    },
+    "pluginsConfig": {
+        "@nrwl/js": {
+            "analyzeSourceFiles": false
+        }
+    },
+    "namedInputs": {
+        "default": [
+            "{projectRoot}/**/*",
+            "sharedGlobals"
+        ],
+        "sharedGlobals": [],
+        "production": [
+            "default"
+        ]
+    },
+    "targetDefaults": {
+        "build": {
+            "cache": true,
+            "dependsOn": [
+                "^build"
+            ]
+        }
+    }
+}

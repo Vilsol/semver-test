@@ -6,12 +6,18 @@
     "url": "https://github.com/Vilsol/semver-test.git"
   },
   "scripts": {
-    "build": "tsc",
+    "publish": "lerna publish --conventional-commits",
+    "changed": "lerna changed",
+    "test": "nx run-many -t test",
+    "build": "nx run-many -t build",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "lerna": "^8.0.2",
+    "nx": "^17.2.8",
     "husky": "^8.0.0"
   },
   "release": {
@@ -24,6 +30,9 @@
       "@semantic-release/github"
     ]
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
