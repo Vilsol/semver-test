@@ -1,6 +1,6 @@
 {
   "name": "5594c8bb-cc40-4d97-9fe0-aeaa03c4bf0c",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
