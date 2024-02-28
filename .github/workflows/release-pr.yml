@@ -1,0 +1,29 @@
+name: Release PR
+
+on:
+  push:
+    branches:
+      - next
+
+permissions:
+  contents: read
+
+jobs:
+  release_pr:
+    permissions:
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm clean-install
+
+      - name: Generate Changes
+        run: echo 'n' | npx lerna version --no-changelog --no-commit-hooks --no-git-tag-version --no-push 2> /dev/null | head -n -3 | tee changes.txt
