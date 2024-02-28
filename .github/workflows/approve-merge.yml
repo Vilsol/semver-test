@@ -1,4 +1,4 @@
-name: Merge
+name: Merge Release PR
 
 on:
   pull_request_review:
@@ -16,6 +16,8 @@ jobs:
 
       - name: Merge PR
         run: |
+          git config --global user.email "bot@restorecommerce.io"
+          git config --global user.name "Bot"
           git checkout main
           git merge --ff origin/next
           git push -u origin main
